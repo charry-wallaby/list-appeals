@@ -3,15 +3,14 @@ import { List } from '@material-ui/core';
 
 import Item from '../item';
 
-const ItemList = ({ items, onFormOpen }) => {
+const ItemList = ({ items }) => {
 
-    const elements = items && items.map((item, index) => {
+    const elements = items && items.map(item => {
         const { id, ...itemProps } = item;
         return (
-            <div key={index}>
+            <div key={id}>
               <Item 
                 {...itemProps}
-                onFormOpen={() => onFormOpen(id)}
               />
             </div>
         )
